@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>LLM Blueprint: Enabling Text-to-Image Generation with Complex and Detailed Prompts</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">LLM Blueprint: Enabling Text-to-Image Generation with Complex and Detailed Prompts</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://hananshafi.github.io" target="_blank">Hanan Gani</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://shariqfarooq123.github.io" target="_blank">Shariq Farooq Bhat</a><sup>2</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://muzammal-naseer.com" target="_blank">Muzammal Naseer</a><sup>1</sup>,</span>
+                    <span class="author-block">
+                    <a href="https://salman-h-khan.github.io" target="_blank">Salman Khan</a><sup>1,3</sup>,</span>
+                      <span class="author-block">
+                        <a href="https://peterwonka.net" target="_blank">Peter Wonka</a><sup>2</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Mohamed Bin Zayed University of Artificial Intelligence</span>
+                    <br>
+                    &nbsp;
+                  <span class="affliatiton"><sup>2</sup>KAUST</span>
+                  &nbsp;
+                  <span class="author-block"><sup>3</sup>Australian National University</span>
+                    <br>
+                    &nbsp;
+                    <span class="conference">ICLR 2024</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2310.10640.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>pdf</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/hananshafi/llmblueprint" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2310.10640" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/iclr_ppt_final_ulta.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Current state-of-the-art text-to-image models face challenges when dealing
+with lengthy and detailed text prompts, resulting in the exclusion of objects and fine-grained details.
+Our approach adeptly encompasses all the objects described, preserving their intricate
+features and spatial characteristics as outlined in the two white boxes.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion-based generative models have significantly advanced text-to-image generation but encounter challenges when processing lengthy and intricate text prompts
+describing complex scenes with multiple objects. While excelling in generating images from short, single-object descriptions, these models often struggle to faithfully
+capture all the nuanced details within longer and more elaborate textual inputs. In
+response, we present a novel approach leveraging Large Language Models (LLMs)
+to extract critical components from text prompts, including bounding box coordinates for foreground objects, detailed textual descriptions for individual objects,
+and a succinct background context. These components form the foundation of
+our layout-to-image generation model, which operates in two phases. The initial
+Global Scene Generation utilizes object layouts and background context to create
+an initial scene but often falls short in faithfully representing object characteristics
+as specified in the prompts. To address this limitation, we introduce an Iterative
+Refinement Scheme that iteratively evaluates and refines box-level content to align
+them with their textual descriptions, recomposing objects as needed to ensure
+consistency. Our evaluation on complex prompts featuring multiple objects demonstrates a substantial improvement in recall compared to baseline diffusion models.
+This is further validated by a user study, underscoring the efficacy of our approach
+in generating coherent and detailed scenes from intricate textual inputs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Derivation. -->
+    <section class="section">
+        <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Methodology</h2>
+                 </div>
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-three-fourths">
+                        <figure>
+                            <img src="./static/images/iclr_main_figure_revised.png" alt="LLM-Blueprint design" id="design-image"
+                                draggable="false" />
+                            <figcaption>
+                                <i>Global Scene Generation:</i> Our proposed approach takes a long text prompt describing a complex
+scene and leverages an LLM to generate k layouts which are then interpolated to a single layout, ensuring
+the spatial accuracy of object placement. Along with the layouts, we also query an LLM to generate object
+descriptions along with a concise background prompt summarizing the scene’s essence. A Layout-to-Image
+model is employed which transforms the layout into an initial image. <i>Iterative Refinement Scheme:</i> The content
+of each box proposal is refined using a diffusion model conditioned on a box mask, a (generated) reference
+image for the box, and the source image, guided by a multi-modal signal.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+        </div>
+    </section>
+  
+<!-- Derivation. -->
+    <section class="section">
+        <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">Qualitative Comparisons</h2>
+                 </div>
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-three-fourths">
+                        <figure>
+                            <img src="./static/images/qualitative_samples_arxiv.png" alt="comparison" id="design-image"
+                                draggable="false" />
+                            <figcaption>
+                               <i>Qualitative comaprisons with state-of-the-art methods.</i> The underlined text in the text prompts represents the objects, their characteristics,
+and spatial properties. Red text highlights missing objects, purple signifies inaccuracies in object positioning,
+and black text points out implausible or deformed elements. Baseline methods often omit objects and struggle
+with spatial accuracy (first four columns), while our approach excels in capturing all objects and preserving
+spatial attributes (last column)
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{gani2023llm,
+      title={LLM Blueprint: Enabling Text-to-Image Generation with Complex and Detailed Prompts}, 
+      author={Hanan Gani and Shariq Farooq Bhat and Muzammal Naseer and Salman Khan and Peter Wonka},
+      booktitle={Twelfth International Conference on Learning Representations}
+      year={2024}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This website was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
