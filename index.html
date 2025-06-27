@@ -112,13 +112,6 @@
         <div class="column is-10">
           <div class="content has-text-centered">
 
-            <figure>
-              <img src="static/images/figure_1.png" alt="Figure 1: Overview of DiMPLe">
-              <figcaption class="subtitle mt-2">
-                <strong>Figure 1:</strong> Motivation behind feature disentanglement across mutliple modalities. 
-              </figcaption>
-            </figure>
-
             <div class="content has-text-justified mt-6">
               <h3 class="title is-4">Abstract</h3>
               <p>
@@ -126,10 +119,11 @@
               </p>
             </div>
 
+            
             <figure>
-              <img src="static/images/figure_dimple_arch.png" alt="Figure 2: DiMPLe Architecture">
-              <figcaption class="subtitle mt-2">
-                <strong>Figure 2:</strong> An overview of DiMPLe:Disentangled Multi-modal Prompt Learning, a unified multi-modal prompt-tuning approach that leverages disentangled image and text features, along with multi-stage deep prompting where vision prompts are conditioned on language.
+              <img src="static/images/figure_1.png" alt="Figure 1: Overview of DiMPLe">
+              <figcaption class="subtitle mt-3">
+                <strong>Figure 1:</strong> Motivation behind feature disentanglement across mutliple modalities. 
               </figcaption>
             </figure>
 
@@ -140,22 +134,29 @@
                 (a) Without the explicit mapping in previous methods, spurious elements in the text embeddings may inadvertently align with the visual model’s invariant features, weakening the model's robustness and reducing its effectiveness on novel classes and out-of-distribution images. (b) Importance of a principled method DiMPLe for disentangling multi-modal representations, to enhance generalization for novel classes as well as to improve the robustness of multi-modal models against distribution shifts for the same class by explicitly mapping the invariant and spurious features for each modality. (c) In previous methods, during training, the general textual features are used to align with the invariant image features as well as spurious image features. (d) DiMPLe removes the ambiguous mapping by aligning the invariant textual and image features as well as associating spurious textual features with their spurious image counterparts.
               </p>
             </div>
+            
+            <figure>
+              <img src="static/images/figure_dimple_arch.png" alt="Figure 2: DiMPLe Architecture">
+              <figcaption class="subtitle mt-3">
+                <strong>Figure 2:</strong> An overview of DiMPLe:Disentangled Multi-modal Prompt Learning, a unified multi-modal prompt-tuning approach that leverages disentangled image and text features, along with multi-stage deep prompting where vision prompts are conditioned on language.
+              </figcaption>
+            </figure>
 
             <figure>
               <img src="static/images/figure_radar_plot.png" alt="Figure 3: Radar Plot Evaluation">
-              <figcaption class="subtitle mt-2">
+              <figcaption class="subtitle mt-3">
                 <strong>Figure 3:</strong> A radar plot showing the results using CoOp-OOD, DiMPLe, DiMPLe-E for Cross-Dataset (11 datasets) and Domain-Generalization (4 ImageNet variants) evaluation. For training, all 1000 classes of ImageNet were used and the respective models were evaluated using the above datasets in a zero-shot setting.
               </figcaption>
             </figure>
 
             <div class="columns is-centered mt-6">
           <div class="column is-full has-text-centered">
-            <img src="static/images/figure_tsne_coopood.png" alt="t-SNE of CoOp-OOD" style="max-width: 70%; height: auto;">
+            <img src="static/images/Corrected_DTD_Coopood_tsne.pdf" alt="t-SNE of CoOp-OOD" style="max-width: 70%; height: auto;">
           </div>
         </div>
         <div class="columns is-centered mt-4">
           <div class="column is-full has-text-centered">
-            <img src="static/images/figure_tsne_dimple.png" alt="t-SNE of DiMPLe" style="max-width: 70%; height: auto;">
+            <img src="static/images/Corrected_DTD_DiMPLe_tsne.pdf" alt="t-SNE of DiMPLe" style="max-width: 70%; height: auto;">
           </div>
         </div>
         <div class="has-text-centered subtitle mt-4">
