@@ -42,7 +42,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DiMPLe: Disentangled Multi-Modal Prompt Learning [ICCV 2025]</h1>
+          <h1 class="title is-1 publication-title">DiMPLe: Disentangled Multi-Modal Prompt Learning <br> [ICCV 2025]</h1>
           <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
                 <span class="author-block">
@@ -56,7 +56,6 @@
 
             <div class="is-size-5 publication-authors">
                  <span class="author-block"><sup>1</sup>Mohamed Bin Zayed University of Artificial Intelligence</span>
-                    <br>
                     &nbsp;
                   <span class="affliatiton"><sup>2</sup>Khalifa Univerity</span>
                   &nbsp;
@@ -112,12 +111,11 @@
       <div class="columns is-centered">
         <div class="column is-10">
           <div class="content has-text-centered">
-            <h2 class="title is-3">Teaser Figures</h2>
 
             <figure>
               <img src="static/images/figure_1.png" alt="Figure 1: Overview of DiMPLe">
               <figcaption class="subtitle mt-2">
-                <strong>Figure 1:</strong> Illustration of ambiguous alignment in prior methods (top) and disentangled cross-modal mapping with DiMPLe (bottom).
+                <strong>Figure 1:</strong> (a) Without the explicit mapping in previous methods, spurious elements in the text embeddings may inadvertently align with the visual model’s invariant features, weakening the model's robustness and reducing its effectiveness on novel classes and out-of-distribution images. (b) Importance of a principled method (\textbf{DiMPLe}) for disentangling multi-modal representations, to enhance generalization for novel classes as well as to improve the robustness of multi-modal models against distribution shifts for the same class by explicitly mapping the invariant and spurious features for each modality. (c) In previous methods, during training, the general textual features are used to align with the invariant image features as well as spurious image features. (d) \textbf{DiMPLe} removes the ambiguous mapping by aligning the invariant textual and image features as well as associating spurious textual features with their spurious image counterparts.
               </figcaption>
             </figure>
 
@@ -131,7 +129,7 @@
             <figure>
               <img src="static/images/figure_dimple_arch.png" alt="Figure 2: DiMPLe Architecture">
               <figcaption class="subtitle mt-2">
-                <strong>Figure 2:</strong> Architecture of DiMPLe showing disentangled multi-modal prompting, conditional mutual information minimization, and contrastive alignment.
+                <strong>Figure 2:</strong> An overview of DiMPLe:Disentangled Multi-modal Prompt Learning, a unified multi-modal prompt-tuning approach that leverages disentangled image and text features, along with multi-stage deep prompting where vision prompts are conditioned on language.
               </figcaption>
             </figure>
 
@@ -145,23 +143,29 @@
             <figure>
               <img src="static/images/figure_radar_plot.png" alt="Figure 3: Radar Plot Evaluation">
               <figcaption class="subtitle mt-2">
-                <strong>Figure 3:</strong> Radar plot comparing DiMPLe, DiMPLe-E, and CoOp-OOD across domain generalization and cross-dataset settings.
+                <strong>Figure 3:</strong> A radar plot showing the results using CoOp-OOD, DiMPLe, DiMPLe-E for Cross-Dataset (11 datasets) and Domain-Generalization (4 ImageNet variants) evaluation. For training, all 1000 classes of ImageNet were used and the respective models were evaluated using the above datasets in a zero-shot setting.
               </figcaption>
             </figure>
 
             <div class="columns is-centered mt-6">
-            <div class="column is-half">
-              <img src="static/images/figure_tsne_coopood.png" alt="Figure 4a: t-SNE of CoOp-OOD">
-              <p class="is-size-7 mt-1">Figure 4a: t-SNE visualization for CoOp-OOD showing overlapping invariant and spurious features.</p>
+            <div class="column is-half has-text-centered">
+              <img src="static/images/figure_tsne_coopood.png" alt="t-SNE of CoOp-OOD" style="max-width: 90%; height: auto;">
             </div>
-            <div class="column is-half">
-              <img src="static/images/figure_tsne_dimple.png" alt="Figure 4b: t-SNE of DiMPLe">
-              <p class="is-size-7 mt-1">Figure 4b: t-SNE visualization for DiMPLe showing clean separation between invariant and spurious features across modalities.</p>
+            <div class="column is-half has-text-centered">
+              <img src="static/images/figure_tsne_dimple.png" alt="t-SNE of DiMPLe" style="max-width: 90%; height: auto;">
             </div>
           </div>
           <div class="has-text-centered subtitle mt-4">
-            <strong>Figure 4:</strong> Comparison of t-SNE plots between CoOp-OOD and DiMPLe. DiMPLe shows more distinct and coherent class-wise clusters.
+            <strong>Figure 4:</strong> t-SNE visualizations comparing CoOp-OOD (left) and DiMPLe (right). DiMPLe achieves clearer separation between invariant and spurious features across modalities, with more distinct class-wise clusters.
           </div>
+
+            <div class="content has-text-justified mt-6">
+              <h3 class="title is-4">Class Discrimination Ability-CoOp-OOD vs DiMPLe:</h3>
+              <p>
+                The ability to distinctly represent different classes in the feature space, is a crucial aspect of robust image classification, especially in scenarios involving OOD data. We use t-SNE plots to visualize embedding distribution, providing insights into class separation and cluster compactness.
+                The t-SNE visualizations in Fig. \ref{fig:tsne} compare the the class discrimination capabilities of CoOp-OOD and DiMPLe, revealing notable differences between the two approaches as evident. Firstly, the compactness of clusters in DiMPLe embeddings \ref{fig:tsne} (bottom) indicates lower intra-class variance, meaning that samples from the same class are more tightly grouped. CoOp-OOD embeddings \ref{fig:tsne} (top), however, show looser clusters. Secondly, these visualizations confirm our hypothesis of the importance of segregating the invariant and spurious features for both modalities. Fig. \ref{fig:tsne} (top) presents a tSNE visualization using the CoOp-OOD method. It shows how the invariant image features (circle) are separated from spurious image features (diamond), and all the textual features (triangle) are closer to invariant image features in the embedding space compared to the spurious ones. In contrast to this \ref{fig:tsne} (bottom) presents a tSNE visualization using our approach i.e., DiMPLe. This empirically shows how the textual invariant features (star) are aligned with the image invariant features (circle) whereas the textual spurious features (triangle) which are closer to the image spurious features are well separated from the invariant ones. Thereby involving the multi-modal invariant features to effectively contribute towards the accurate prediction of a class and minimizing the influence of the spurious ones. Thus we can conclude that by explicitly disentangling invariant and spurious features across the vision-language modalities, DiMPLe ensures that invariant embeddings primarily focus on class-relevant information. 
+              </p>
+            </div>
 
           </div>
         </div>
