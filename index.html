@@ -6,9 +6,9 @@
   <meta property="og:title" content="DiMPLe: Disentangled Multi-Modal Prompt Learning"/>
   <meta property="og:description" content="Robust adaptation under distribution shift via prompt-guided decoupling of invariant and spurious features in vision-language models."/>
   <meta property="og:url" content="https://openreview.net/forum?id=mYmg0I9jfE"/>
-  <meta property="og:image" content="static/image/" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <meta property="og:image" content="" />
+  <meta property="og:image:width" content=""/>
+  <meta property="og:image:height" content=""/>
 
   <meta name="twitter:title" content="DiMPLe: Disentangled Multi-Modal Prompt Learning">
   <meta name="twitter:description" content="Domain-robust multi-modal adaptation via disentangled prompt tuning in vision-language models">
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>DiMPLe: Disentangled Multi-Modal Prompt Learning</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -42,7 +42,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DiMPLe: Disentangled Multi-Modal Prompt Learning <br> [ICCV 2025]</h1>
+          <h1 class="title is-2 publication-title">DiMPLe: Disentangled Multi-Modal Prompt Learning <br> [ICCV 2025]</h1>
           <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
                 <span class="author-block">
@@ -115,7 +115,7 @@
             <figure>
               <img src="static/images/figure_1.png" alt="Figure 1: Overview of DiMPLe">
               <figcaption class="subtitle mt-2">
-                <strong>Figure 1:</strong> (a) Without the explicit mapping in previous methods, spurious elements in the text embeddings may inadvertently align with the visual model’s invariant features, weakening the model's robustness and reducing its effectiveness on novel classes and out-of-distribution images. (b) Importance of a principled method (\textbf{DiMPLe}) for disentangling multi-modal representations, to enhance generalization for novel classes as well as to improve the robustness of multi-modal models against distribution shifts for the same class by explicitly mapping the invariant and spurious features for each modality. (c) In previous methods, during training, the general textual features are used to align with the invariant image features as well as spurious image features. (d) \textbf{DiMPLe} removes the ambiguous mapping by aligning the invariant textual and image features as well as associating spurious textual features with their spurious image counterparts.
+                <strong>Figure 1:</strong> Motivation behind feature disentanglement across mutliple modalities. 
               </figcaption>
             </figure>
 
@@ -137,6 +137,7 @@
               <h3 class="title is-4">Key Insight</h3>
               <p>
                 A crucial insight of DiMPLe is that spurious features in images often correspond to spurious components in textual prompts. Previous methods ignored this cross-modal alignment, leading to ambiguous supervision. DiMPLe explicitly aligns invariant features with invariant counterparts and similarly for spurious features, thereby enforcing coherent representations across modalities.
+                (a) Without the explicit mapping in previous methods, spurious elements in the text embeddings may inadvertently align with the visual model’s invariant features, weakening the model's robustness and reducing its effectiveness on novel classes and out-of-distribution images. (b) Importance of a principled method DiMPLe for disentangling multi-modal representations, to enhance generalization for novel classes as well as to improve the robustness of multi-modal models against distribution shifts for the same class by explicitly mapping the invariant and spurious features for each modality. (c) In previous methods, during training, the general textual features are used to align with the invariant image features as well as spurious image features. (d) DiMPLe removes the ambiguous mapping by aligning the invariant textual and image features as well as associating spurious textual features with their spurious image counterparts.
               </p>
             </div>
 
@@ -148,16 +149,18 @@
             </figure>
 
             <div class="columns is-centered mt-6">
-            <div class="column is-half has-text-centered">
-              <img src="static/images/figure_tsne_coopood.png" alt="t-SNE of CoOp-OOD" style="max-width: 90%; height: auto;">
-            </div>
-            <div class="column is-half has-text-centered">
-              <img src="static/images/figure_tsne_dimple.png" alt="t-SNE of DiMPLe" style="max-width: 90%; height: auto;">
-            </div>
+          <div class="column is-full has-text-centered">
+            <img src="static/images/figure_tsne_coopood.png" alt="t-SNE of CoOp-OOD" style="max-width: 70%; height: auto;">
           </div>
-          <div class="has-text-centered subtitle mt-4">
-            <strong>Figure 4:</strong> t-SNE visualizations comparing CoOp-OOD (left) and DiMPLe (right). DiMPLe achieves clearer separation between invariant and spurious features across modalities, with more distinct class-wise clusters.
+        </div>
+        <div class="columns is-centered mt-4">
+          <div class="column is-full has-text-centered">
+            <img src="static/images/figure_tsne_dimple.png" alt="t-SNE of DiMPLe" style="max-width: 70%; height: auto;">
           </div>
+        </div>
+        <div class="has-text-centered subtitle mt-4">
+          <strong>Figure 4:</strong> t-SNE visualizations comparing CoOp-OOD (top) and DiMPLe (bottom). DiMPLe achieves clearer separation between invariant and spurious features across modalities, with more distinct class-wise clusters.
+        </div>
 
             <div class="content has-text-justified mt-6">
               <h3 class="title is-4">Class Discrimination Ability-CoOp-OOD vs DiMPLe:</h3>
